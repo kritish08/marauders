@@ -29,6 +29,7 @@ questions with Azure OpenAI.
 - [Examples](#examples)
 - [Tech stack](#tech-stack)
 - [Roadmap](#roadmap)
+- [Contributors](#contributors)
 - [Security](#security)
 - [License](#license)
 
@@ -283,11 +284,23 @@ Sample client code lives in [`backend/examples/`](backend/examples/):
 
 ## Roadmap
 
-- On-device Foundation Models for a fully offline Q&A fallback (no backend
-  call at all), with on-device embeddings for retrieval at 100+ monument scale
+- Apple Foundation Models are already wired in (`AnswerEngine`,
+  `VisionAnswerService`, `VoiceQuestionService`, `TourRecapStore`) for a
+  fully offline Q&A fallback with no backend call at all; it runs as a
+  protocol-compatible stub until built against the iOS 27 SDK — swapping in
+  the real on-device model is a rebuild away, not a rewrite
+- On-device embeddings for retrieval at 100+ monument scale
 - Fluent-speaker QA pass on the French/Spanish machine translation
 - A join-table shape for nugget images (current `images_json` column is the
   "ship tonight" version, noted as a followup in `backend/CLAUDE.md`)
+
+## Contributors
+
+| Contributor | Contribution |
+|---|---|
+| **Kritish** ([@kritish08](https://github.com/kritish08)) | Entire backend (FastAPI service, content pipeline, admin panel), all iOS 27 features added to the frontend — including Apple Foundation Models integration for offline on-device AI — the SQLite database, ML data training, and the Azure AI Foundry integration (GPT, Whisper, TTS) |
+| **Kartik Masiwal** ([@kartikmasiwal](https://github.com/kartikmasiwal)) | iOS frontend development |
+| **Gitansh Kapoor** ([@GitanshKapoor](https://github.com/GitanshKapoor)) | AR, frontend, UX, and project flow |
 
 ## Security
 
