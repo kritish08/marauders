@@ -4,10 +4,10 @@
 anything, hear a grounded answer in your language, in seconds — no network
 required for the core tour.
 
-Built in 48 hours at a hackathon by team **Kyrex**. Two independent apps living
-side by side in this workspace: a SwiftUI/ARKit iOS app and a FastAPI backend
-that turns curated tour content into offline packages and answers live
-questions with Azure OpenAI.
+A personal project built in 48 hours at a hackathon. Two independent apps
+living side by side in this workspace: a SwiftUI/ARKit iOS app and a FastAPI
+backend that turns curated tour content into offline packages and answers
+live questions with Azure OpenAI.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](backend/requirements.txt)
