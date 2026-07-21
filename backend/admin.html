@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marauder's Guide — Content Studio</title>
+<style>
+  :root{
+    --parchment:#f3e9d2; --parchment-deep:#e8d9b8; --ink:#3b2a1a; --ink-soft:#6b5233;
+    --gold:#b8860b; --gold-soft:#d4a935; --seal:#8c2d19; --card:#faf4e4;
+    --ok:#3e6b3a; --line:#d9c69a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(184,134,11,.10), transparent 50%),
+      radial-gradient(ellipse at 85% 90%, rgba(140,45,25,.08), transparent 55%),
+      var(--parchment);
+    min-height:100vh}
+  h1,h2,h3{font-weight:normal;letter-spacing:.5px}
+  .smallcaps{font-variant:small-caps;letter-spacing:2px}
+
+  /* ---------- login ---------- */
+  #login{display:flex;align-items:center;justify-content:center;min-height:100vh}
+  .login-card{background:var(--card);border:2px solid var(--gold);border-radius:6px;
+    padding:40px 44px;max-width:400px;width:92%;text-align:center;
+    box-shadow:0 10px 40px rgba(59,42,26,.25)}
+  .login-card h1{font-size:24px;margin:0 0 4px}
+  .login-card .sub{color:var(--ink-soft);font-size:13px;margin-bottom:26px}
+  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px 0}
+  input,textarea,select{font:inherit;color:var(--ink);background:#fffdf6;
+    border:1px solid var(--line);border-radius:4px;padding:9px 11px;width:100%}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--gold-soft);border-color:var(--gold)}
+  button{font:inherit;cursor:pointer;border:0;border-radius:4px;padding:9px 18px;
+    background:var(--ink);color:var(--parchment)}
+  button.gold{background:var(--gold);color:#fff}
+  button.ghost{background:transparent;color:var(--ink-soft);border:1px solid var(--line)}
+  button.danger{background:var(--seal);color:#fff}
+  button:disabled{opacity:.5;cursor:wait}
+  #loginErr{color:var(--seal);font-size:13px;min-height:18px;margin-top:10px}
+
+  /* ---------- app ---------- */
+  #app{display:none}
+  header{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--parchment);
+    padding:12px 22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+    box-shadow:0 2px 12px rgba(0,0,0,.25)}
+  header h1{font-size:17px;margin:0}
+  header .sub{font-size:11px;color:#cbb98f;letter-spacing:2px}
+  .spacer{flex:1}
+  .count{background:rgba(255,255,255,.08);border:1px solid rgba(212,169,53,.4);
+    border-radius:4px;padding:4px 12px;font-size:12px;text-align:center}
+  .count b{display:block;font-size:16px;color:var(--gold-soft)}
+  main{max-width:980px;margin:26px auto 80px;padding:0 18px}
+  #toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    background:var(--ink);color:var(--parchment);padding:10px 22px;border-radius:4px;
+    border:1px solid var(--gold);font-size:13px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9}
+
+  .cp{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);
+    border-radius:6px;margin-bottom:18px;overflow:hidden}
+  .cp-head{padding:14px 18px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+    background:linear-gradient(180deg,var(--parchment-deep),var(--card))}
+  .cp-head h2{font-size:17px;margin:0}
+  .cp-head .hi{color:var(--ink-soft);font-size:14px}
+  .badge{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;border-radius:3px;
+    padding:3px 8px;border:1px solid var(--gold);color:var(--gold)}
+  .badge.venue{border-color:var(--seal);color:var(--seal)}
+  .badge.gps{border-color:var(--ok);color:var(--ok)}
+  .cp-intro{padding:0 18px 10px;color:var(--ink-soft);font-style:italic;font-size:13px}
+  .nug{display:flex;gap:14px;padding:12px 18px;border-top:1px dashed var(--line);align-items:flex-start}
+  .nug .star{color:var(--gold);font-size:18px;line-height:1.2;width:20px;text-align:center}
+  .nug-body{flex:1;min-width:0}
+  .nug-body b{font-size:14px}
+  .nug-body .hi{color:var(--ink-soft);font-size:13px;margin-left:8px}
+  .nug-body .preview{color:var(--ink-soft);font-size:12.5px;margin-top:3px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .chip{font-size:11px;background:#efe3c4;border-radius:3px;padding:2px 8px;color:var(--ink-soft)}
+  .nug-actions{display:flex;gap:6px}
+  .nug-actions button{padding:5px 12px;font-size:12px}
+
+  /* ---------- editor drawer ---------- */
+  #drawer{position:fixed;inset:0;background:rgba(59,42,26,.45);display:none;z-index:8}
+  .drawer-card{position:absolute;right:0;top:0;bottom:0;width:min(560px,100%);
+    background:var(--card);border-left:2px solid var(--gold);padding:26px;overflow-y:auto}
+  .drawer-card h2{margin-top:0;font-size:19px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+  .field{margin-bottom:10px}
+  .field label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:4px}
+  textarea{min-height:84px;resize:vertical}
+  .drawer-actions{display:flex;gap:10px;margin-top:16px}
+  .checkline{display:flex;align-items:center;gap:8px;font-size:13px}
+  .checkline input{width:auto}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <div class="login-card">
+    <div class="smallcaps" style="color:var(--gold);font-size:12px">Marauder's Guide</div>
+    <h1>Content Studio</h1>
+    <div class="sub">the source of every secret the guide tells</div>
+    <div class="rule"></div>
+    <input id="key" type="password" placeholder="Admin key" onkeydown="if(event.key==='Enter')login()">
+    <div id="loginErr"></div>
+    <button class="gold" style="width:100%" onclick="login()">Unlock</button>
+  </div>
+</div>
+
+<div id="app">
+  <header>
+    <div>
+      <div class="sub smallcaps">Marauder's Guide · Content Studio</div>
+      <h1 id="title">—</h1>
+    </div>
+    <div class="spacer"></div>
+    <select id="monSel" onchange="onMonChange()" title="Property"
+      style="width:auto;min-width:180px;background:#fffdf6"></select>
+    <button onclick="openProp()"
+      style="background:rgba(255,255,255,.08);color:var(--gold-soft);border:1px solid rgba(212,169,53,.4)">+ Property</button>
+    <div class="count"><b id="cCp">0</b>checkpoints</div>
+    <div class="count"><b id="cNg">0</b>nuggets</div>
+    <div class="count"><b id="cLang">0</b>languages</div>
+    <button class="gold" onclick="openEditor()">+ New nugget</button>
+    <button onclick="exportAndRebuild()" id="pubBtn">Publish package</button>
+    <button class="ghost" onclick="logout()">Lock</button>
+  </header>
+  <main id="list"></main>
+</div>
+
+<div id="drawer">
+  <div class="drawer-card">
+    <h2 id="dTitle">New nugget</h2>
+    <div class="grid2">
+      <div class="field"><label>Nugget id</label><input id="n_id" placeholder="n_venue_arch"></div>
+      <div class="field"><label>Checkpoint</label><select id="n_cp"></select></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>AR target image id</label><input id="n_target" placeholder="venue_arch (targets/*.jpg)"></div>
+      <div class="field" style="display:flex;align-items:flex-end">
+        <div class="checkline"><input type="checkbox" id="n_excl"><label style="margin:0;text-transform:none;font-size:13px;letter-spacing:0">Guide-exclusive secret ★</label></div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>Title · English</label><input id="n_title_en"></div>
+      <div class="field"><label>Title · हिन्दी</label><input id="n_title_hi"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>Title · Français</label><input id="n_title_fr"></div>
+      <div class="field"><label>Title · Español</label><input id="n_title_es"></div>
+    </div>
+    <div class="field"><label>Story · English (spoken style, 40–90 words)</label><textarea id="n_text_en"></textarea></div>
+    <div class="field"><label>Story · हिन्दी</label><textarea id="n_text_hi"></textarea></div>
+    <div class="field"><label>Story · Français</label><textarea id="n_text_fr"></textarea></div>
+    <div class="field"><label>Story · Español</label><textarea id="n_text_es"></textarea></div>
+    <div class="field" id="n_imgSection" style="display:none">
+      <label>Images (<span id="n_imgCount">0</span>/3)</label>
+      <div id="n_imgList"></div>
+      <div id="n_imgAddRow" style="display:flex;gap:8px;align-items:center;margin-top:6px">
+        <input type="file" id="n_imgFile" accept="image/*" onchange="onImgPick()">
+        <button type="button" class="gold" id="n_imgAddBtn" onclick="addImage()">Add image</button>
+      </div>
+      <div id="n_imgPreview"></div>
+    </div>
+    <div class="drawer-actions">
+      <button class="gold" onclick="saveNugget()">Save</button>
+      <button id="n_translateBtn" onclick="translateFrEs()" title="Fill missing Français/Español from English across this property">Auto-translate fr/es</button>
+      <button class="ghost" onclick="closeEditor()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="propDrawer" style="position:fixed;inset:0;background:rgba(59,42,26,.45);display:none;z-index:8">
+  <div class="drawer-card">
+    <h2>New property</h2>
+    <div class="grid2">
+      <div class="field"><label>Property id</label><input id="p_id" placeholder="red_fort"></div>
+      <div class="field"><label>Languages</label><input id="p_langs" placeholder="en,hi,fr,es"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>Name · English</label><input id="p_name_en" placeholder="Red Fort"></div>
+      <div class="field"><label>Name · हिन्दी</label><input id="p_name_hi"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>Name · Français</label><input id="p_name_fr"></div>
+      <div class="field"><label>Name · Español</label><input id="p_name_es"></div>
+    </div>
+    <div class="drawer-actions">
+      <button class="gold" onclick="saveProperty()">Create property</button>
+      <button class="ghost" onclick="closeProp()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+let DATA=null, MONUMENT=null, MONS=[], KEY=sessionStorage.getItem('mg_key')||'';
+const $=id=>document.getElementById(id);
+const hdrs=()=>({'Content-Type':'application/json','X-App-Key':KEY});
+async function api(path,opts={}){
+  const r=await fetch('/admin'+path,{...opts,headers:hdrs()});
+  if(r.status===401){logout();throw new Error('key rejected')}
+  if(!r.ok) throw new Error(r.status+' '+await r.text());
+  return r.json();
+}
+function toast(m,err){const t=$('toast');t.textContent=m;t.style.opacity=1;
+  t.style.borderColor=err?'var(--seal)':'var(--gold)';setTimeout(()=>t.style.opacity=0,2600)}
+
+async function login(){
+  KEY=$('key').value.trim();
+  if(!KEY){$('loginErr').textContent='Enter the admin key.';return}
+  try{
+    await api('/verify');
+    sessionStorage.setItem('mg_key',KEY);
+    $('login').style.display='none';$('app').style.display='block';
+    await loadMonuments();load();
+  }catch(e){$('loginErr').textContent='That key is not recognised.'}
+}
+function logout(){sessionStorage.removeItem('mg_key');KEY='';
+  $('app').style.display='none';$('login').style.display='flex';$('key').value=''}
+
+async function loadMonuments(selectId){
+  try{
+    MONS=await api('/monuments');
+    $('monSel').innerHTML=MONS.map(m=>
+      `<option value="${esc(m.id)}">${esc(m.name_en||m.id)} (${m.checkpoint_count||0})</option>`).join('');
+    if(selectId && MONS.some(m=>m.id===selectId)) MONUMENT=selectId;
+    else if(!MONUMENT || !MONS.some(m=>m.id===MONUMENT)) MONUMENT=MONS.length?MONS[0].id:null;
+    if(MONUMENT!=null) $('monSel').value=MONUMENT;
+  }catch(e){toast('Properties load failed: '+e.message,1)}
+}
+function onMonChange(){MONUMENT=$('monSel').value;load()}
+
+async function load(){
+  try{
+    DATA=await api('/content'+(MONUMENT?('?monument='+encodeURIComponent(MONUMENT)):''));
+    const cps=DATA.checkpoints, ngs=DATA.nuggets;
+    const mon=MONS.find(m=>m.id===MONUMENT);
+    $('cCp').textContent=cps.length; $('cNg').textContent=ngs.length; $('cLang').textContent=(mon&&mon.languages)?mon.languages.split(',').length:2;
+    $('title').textContent=(mon&&mon.name_en)||(DATA.monument&&DATA.monument.name_en)||MONUMENT||'Tour';
+    $('n_cp').innerHTML=cps.map(c=>`<option value="${esc(c.id)}">${esc(c.name_en||c.id)}${c.venue?' · venue':''}</option>`).join('');
+    $('list').innerHTML=cps.map(c=>{
+      const mine=ngs.filter(n=>n.checkpoint_id===c.id);
+      const gps=(c.lat!=null&&c.lng!=null)?`<span class="badge gps">gps ${c.lat.toFixed(4)}, ${c.lng.toFixed(4)}</span>`:'';
+      return `<section class="cp">
+        <div class="cp-head">
+          <h2>${esc(c.name_en||c.id)}</h2><span class="hi">${esc(c.name_hi)||''}</span>
+          ${c.venue?'<span class="badge venue">venue</span>':'<span class="badge">monument</span>'}${gps}
+          <span class="chip">order ${c.position}</span>
+        </div>
+        ${c.intro_en?`<div class="cp-intro">“${esc(c.intro_en)}”</div>`:''}
+        ${mine.map(n=>`<div class="nug">
+            <div class="star">${n.exclusive?'★':'☆'}</div>
+            <div class="nug-body">
+              <b>${esc(n.title_en)}</b><span class="hi">${esc(n.title_hi)}</span>
+              <span class="chip">${esc(n.target_image_id)||'no target'}</span>
+              <div class="preview">${esc(n.text_en)}</div>
+            </div>
+            <div class="nug-actions">
+              <button class="ghost" onclick='edit(${JSON.stringify(n.id)})'>Edit</button>
+              <button class="danger" onclick='del(${JSON.stringify(n.id)})'>Delete</button>
+            </div>
+          </div>`).join('')||'<div class="nug"><i style="color:var(--ink-soft)">No nuggets yet.</i></div>'}
+      </section>`;
+    }).join('');
+  }catch(e){toast('Load failed: '+e.message,1)}
+}
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let EDIT_NID=null, EDIT_IMGS=[], PREVIEW_URL=null;
+function openEditor(n){
+  $('dTitle').textContent=n?'Edit nugget':'New nugget';
+  $('n_id').value=n?n.id:''; $('n_id').disabled=!!n;
+  if(n)$('n_cp').value=n.checkpoint_id;
+  $('n_target').value=n?n.target_image_id:'';
+  $('n_excl').checked=n?!!n.exclusive:false;
+  $('n_title_en').value=n?n.title_en:''; $('n_title_hi').value=n?n.title_hi:'';
+  $('n_title_fr').value=n?(n.title_fr||''):''; $('n_title_es').value=n?(n.title_es||''):'';
+  $('n_text_en').value=n?n.text_en:'';   $('n_text_hi').value=n?n.text_hi:'';
+  $('n_text_fr').value=n?(n.text_fr||''):''; $('n_text_es').value=n?(n.text_es||''):'';
+  clearPreview(); if($('n_imgFile'))$('n_imgFile').value='';
+  EDIT_NID=n?n.id:null;
+  if(n){
+    try{EDIT_IMGS=JSON.parse(n.images_json||'[]')||[]}catch(_){EDIT_IMGS=[]}
+    $('n_imgSection').style.display='block'; renderImages();
+  }else{
+    EDIT_IMGS=[]; $('n_imgSection').style.display='none';
+  }
+  $('drawer').style.display='block';
+}
+function renderImages(){
+  $('n_imgCount').textContent=EDIT_IMGS.length;
+  $('n_imgList').innerHTML=EDIT_IMGS.map((p,i)=>
+    `<span class="chip" style="display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0">`+
+      `<span>${esc(p)}</span>`+
+      `<button type="button" class="danger" style="padding:0 7px;font-size:13px;line-height:1.5" onclick='removeImage(${i})'>×</button>`+
+    `</span>`).join('')||'<i style="color:var(--ink-soft);font-size:12px">No images yet.</i>';
+  $('n_imgAddRow').style.display=(EDIT_IMGS.length>=3)?'none':'flex';
+}
+function onImgPick(){
+  clearPreview();
+  const fi=$('n_imgFile');
+  if(fi&&fi.files&&fi.files[0]){
+    PREVIEW_URL=URL.createObjectURL(fi.files[0]);
+    $('n_imgPreview').innerHTML=`<img src="${PREVIEW_URL}" style="max-width:100%;max-height:130px;border:1px solid var(--line);border-radius:4px;margin-top:8px">`;
+  }
+}
+function clearPreview(){
+  if(PREVIEW_URL){URL.revokeObjectURL(PREVIEW_URL);PREVIEW_URL=null}
+  if($('n_imgPreview'))$('n_imgPreview').innerHTML='';
+}
+async function addImage(){
+  if(!EDIT_NID){toast('Save the nugget first, then add images',1);return}
+  const fi=$('n_imgFile');
+  if(!fi.files||!fi.files[0]){toast('Choose an image first',1);return}
+  const btn=$('n_imgAddBtn'); btn.disabled=true;
+  try{
+    const fd=new FormData(); fd.append('file', fi.files[0]);
+    const r=await fetch('/admin/nuggets/'+encodeURIComponent(EDIT_NID)+'/images',{method:'POST',headers:{'X-App-Key':KEY},body:fd});
+    if(!r.ok){throw new Error(r.status+' '+await r.text())}
+    const data=await r.json();
+    EDIT_IMGS=data.images||[];
+    fi.value=''; clearPreview(); renderImages(); load();
+    toast('Image added');
+  }catch(e){toast('Upload failed: '+e.message,1)}
+  btn.disabled=false;
+}
+async function removeImage(i){
+  if(!EDIT_NID)return;
+  try{
+    const r=await api('/nuggets/'+encodeURIComponent(EDIT_NID)+'/images/'+i,{method:'DELETE'});
+    EDIT_IMGS=r.images||[];
+    renderImages(); load();
+    toast('Image removed');
+  }catch(e){toast('Remove failed: '+e.message,1)}
+}
+function closeEditor(){clearPreview();$('drawer').style.display='none'}
+function edit(id){const n=DATA.nuggets.find(x=>x.id===id);if(n)openEditor(n)}
+async function saveNugget(){
+  const body={id:$('n_id').value.trim(),checkpoint_id:$('n_cp').value,
+    title_en:$('n_title_en').value,title_hi:$('n_title_hi').value,
+    title_fr:$('n_title_fr').value,title_es:$('n_title_es').value,
+    text_en:$('n_text_en').value,text_hi:$('n_text_hi').value,
+    text_fr:$('n_text_fr').value,text_es:$('n_text_es').value,
+    target_image_id:$('n_target').value.trim(),exclusive:$('n_excl').checked,position:99};
+  if(!body.id||!body.title_en||!body.text_en){toast('id, English title and English story are required',1);return}
+  try{await api('/nuggets',{method:'POST',body:JSON.stringify(body)});
+    toast('Saved '+body.id);closeEditor();load()}
+  catch(e){toast('Save failed: '+e.message,1)}
+}
+async function translateFrEs(){
+  const b=$('n_translateBtn'); if(!b)return;
+  const label=b.textContent; b.disabled=true; b.textContent='translating…';
+  try{
+    const r=await api('/translate?monument='+encodeURIComponent(MONUMENT),{method:'POST'});
+    toast('Translated '+(r.translated||0)+' · skipped '+(r.skipped||0)+' · failed '+(r.failed||0),!!r.failed);
+    // Close the editor: translate refilled fr/es in the DB, but this drawer still
+    // holds the pre-translate (empty) fr/es. Saving now would re-blank them, so
+    // close and let the user re-open to see/edit the fresh translations.
+    closeEditor();
+    load();
+  }catch(e){toast('Translate failed: '+e.message,1)}
+  b.disabled=false; b.textContent=label;
+}
+async function del(id){
+  if(!confirm('Delete nugget '+id+'?'))return;
+  try{await api('/nuggets/'+id,{method:'DELETE'});toast('Deleted '+id);load()}
+  catch(e){toast('Delete failed: '+e.message,1)}
+}
+function openProp(){
+  $('p_id').value='';$('p_name_en').value='';$('p_name_hi').value='';
+  $('p_name_fr').value='';$('p_name_es').value='';$('p_langs').value='en,hi,fr,es';
+  $('propDrawer').style.display='block';
+}
+function closeProp(){$('propDrawer').style.display='none'}
+async function saveProperty(){
+  const id=$('p_id').value.trim();
+  const body={id,name_en:$('p_name_en').value.trim(),name_hi:$('p_name_hi').value.trim(),
+    name_fr:$('p_name_fr').value.trim(),name_es:$('p_name_es').value.trim(),
+    languages:$('p_langs').value.trim()||'en,hi,fr,es'};
+  if(!id||!body.name_en){toast('Property id and English name are required',1);return}
+  try{
+    await api('/monuments',{method:'POST',body:JSON.stringify(body)});
+    toast('Property created '+id);closeProp();
+    await loadMonuments(id);load();
+  }catch(e){toast('Property save failed: '+e.message,1)}
+}
+async function exportAndRebuild(){
+  const b=$('pubBtn');b.disabled=true;
+  try{
+    toast('Exporting to package source…');
+    await api('/export',{method:'POST'});
+    toast('Rebuilding package — rendering any new audio…');
+    await api('/rebuild',{method:'POST'});
+    toast('Package published ✓ — live on /packages');
+  }catch(e){toast('Publish: '+e.message,1)}
+  b.disabled=false;
+}
+
+if(KEY){api('/verify').then(async()=>{$('login').style.display='none';$('app').style.display='block';await loadMonuments();load()}).catch(()=>logout())}
+</script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+monument:
+  id: zomato_farmhouse
+  name:
+    en: Zomato Farmhouse
+    hi: ज़ोमैटो फार्महाउस
+    fr: Ferme Zomato
+    es: Zomato Farmhouse
+  languages:
+  - en
+  - hi
+  - fr
+  - es
+  overview:
+    en: Welcome to the farmhouse — part garden, part office, part playground, and
+      for these 36 hours, the birthplace of everything you're about to see. Seven secrets
+      hide between the parking lot and the war room. Point your camera and find them.
+    hi: फार्महाउस में आपका स्वागत है — कुछ बगीचा, कुछ दफ़्तर, कुछ खेल का मैदान, और
+      अगले 36 घंटों के लिए वह सब कुछ जो आप देखने वाले हैं उसका जन्मस्थान। पार्किंग
+      से लेकर वॉर-रूम तक सात राज़ छिपे हैं। कैमरा घुमाइए और उन्हें ढूँढिए।
+    fr: Bienvenue à la ferme — en partie jardin, en partie bureau, en partie terrain
+      de jeu, et pendant ces 36 heures, le lieu de naissance de tout ce que vous êtes
+      sur le point de voir. Sept secrets se cachent entre le parking et la salle de
+      guerre. Pointez votre caméra et trouvez-les.
+    es: 'Bienvenidos a la casa de campo: parte jardín, parte oficina, parte patio
+      de juegos y, durante estas 36 horas, el lugar de nacimiento de todo lo que están
+      a punto de ver. Siete secretos se esconden entre el estacionamiento y la sala
+      de guerra. Apunten su cámara y descúbranlos.'
+  ambientTrack: music/ambient_default.mp3
+checkpoints:
+- id: cp_parking
+  name:
+    en: The Parking Area
+    hi: पार्किंग एरिया
+    fr: L’aire de stationnement
+    es: El estacionamiento
+  mapPosition:
+    x: 0.5
+    y: 0.82
+  intro:
+    en: Where every journey here begins — and three very different residents are each
+      hiding a story.
+    hi: जहाँ हर सफ़र शुरू होता है — और तीन बिलकुल अलग किरदार अपनी-अपनी कहानी छिपाए
+      बैठे हैं।
+    fr: Là où commence chaque visite ici — et où trois habitants très différents cachent
+      chacun une histoire.
+    es: Donde comienza cada viaje aquí, y tres residentes muy diferentes esconden cada
+      uno una historia.
+  gps:
+    lat: 28.479144110947203
+    lng: 77.16345551893588
+    radius: 35
+  nuggets:
+  - id: n_parking_tree
+    title:
+      en: The Tree That Refused to Move
+      hi: वह पेड़ जो हटने से इनकार कर गया
+      fr: L’arbre qui refusait de bouger
+      es: El árbol que se negó a moverse
+    targetImageId: zf_parking_tree
+    exclusive: true
+    images:
+    - images/n_parking_tree_0.webp
+    - images/n_parking_tree_1.webp
+    - images/n_parking_tree_2.webp
+    text:
+      en: 'Look up. This tree was here long before the tarmac, the SUVs, or the Wi-Fi.
+        When they paved the lot, they didn''t cut it down — they built the whole parking
+        around it. Every car here parks in the shade of the oldest employee on the
+        property: one that''s never missed a day, and never asked for a raise.'
+      hi: ऊपर देखिए। यह पेड़ यहाँ तब से है जब न सड़क थी, न ये गाड़ियाँ, न वाई-फ़ाई।
+        जब पार्किंग बनी तो इसे काटा नहीं गया — पूरी पार्किंग इसके चारों ओर बनाई गई।
+        हर गाड़ी यहाँ परिसर के सबसे पुराने कर्मचारी की छाँव में खड़ी होती है — जिसने
+        न कभी छुट्टी ली, न कभी तनख़्वाह माँगी।
+      fr: 'Levez les yeux. Cet arbre était là bien avant le goudron, les SUV ou le
+        Wi‑Fi. Quand ils ont goudronné le parking, ils ne l’ont pas abattu — ils ont
+        construit tout le stationnement autour de lui. Chaque voiture ici se gare
+        à l’ombre du plus ancien employé de la propriété : un arbre qui n’a jamais
+        manqué un jour de travail et n’a jamais demandé d’augmentation.'
+      es: 'Mira hacia arriba. Este árbol estaba aquí mucho antes del asfalto, las
+        SUV o el Wi‑Fi. Cuando pavimentaron el estacionamiento, no lo talaron: construyeron
+        todo el aparcamiento a su alrededor. Todos los coches aquí aparcan a la sombra
+        del empleado más antiguo de la propiedad: uno que nunca ha faltado un día
+        y nunca ha pedido un aumento.'
+  - id: n_parking_gwagon
+    title:
+      en: The Underdog in the Parking Lot
+      hi: पार्किंग का अनसुना हीरो
+      fr: Le perdant dans le parking
+      es: El perdedor en el estacionamiento
+    targetImageId: zf_gwagon
+    targetImageIds:
+    - zf_gwagon_0
+    - zf_gwagon_1
+    - zf_gwagon_2
+    - zf_gwagon_3
+    - zf_gwagon_4
+    exclusive: false
+    images:
+    - images/n_parking_gwagon_0.webp
+    - images/n_parking_gwagon_1.webp
+    - images/n_parking_gwagon_2.webp
+    text:
+      en: 'Surrounded by glossy SUVs sits DL 14 CF 1143 — a humble Maruti WagonR.
+        Don''t laugh. The little tall-boy that fits four engineers and a weekend of
+        energy drinks beats every luxury badge here on the one metric that matters
+        at 3 AM: it always starts. The real getaway car of any hackathon isn''t the
+        fastest — it''s the reliable one.'
+      hi: 'चमचमाती SUV के बीच खड़ी है DL 14 CF 1143 — एक साधारण मारुति वैगनआर। हँसिए
+        मत। जो छोटी गाड़ी चार इंजीनियर और वीकेंड भर के एनर्जी ड्रिंक समेट ले, वह रात
+        3 बजे उस एक पैमाने पर हर महँगे बैज को हरा देती है: यह हमेशा स्टार्ट होती है।
+        किसी भी हैकाथॉन की असली गेटअवे कार सबसे तेज़ नहीं, सबसे भरोसेमंद होती है।'
+      fr: 'Entourée de SUV rutilants se trouve la DL 14 CF 1143 — une modeste Maruti
+        WagonR. Ne riez pas. La petite « tall-boy » qui peut accueillir quatre ingénieurs
+        et un week-end de boissons énergétiques surpasse ici toutes les marques de
+        luxe sur le seul critère qui compte à 3 h du matin : elle démarre toujours.
+        La vraie voiture de fuite de tout hackathon n’est pas la plus rapide — c’est
+        la plus fiable.'
+      es: 'Rodeado de relucientes SUV se encuentra el DL 14 CF 1143: un humilde Maruti
+        WagonR. No se rían. El pequeño “tall-boy” que puede llevar a cuatro ingenieros
+        y un fin de semana de bebidas energéticas supera a cualquier emblema de lujo
+        aquí en la única métrica que importa a las 3 de la mañana: siempre arranca.
+        El verdadero coche de escape de cualquier hackatón no es el más rápido: es
+        el fiable.'
+  - id: n_parking_cabin
+    title:
+      en: The Container That Clocked In
+      hi: वह कंटेनर जो ड्यूटी पर आ गया
+      fr: Le conteneur qui a pris son service
+      es: El contenedor que fichó para trabajar
+    targetImageId: zf_cabin
+    targetImageIds:
+    - zf_cabin_0
+    - zf_cabin_1
+    - zf_cabin_2
+    - zf_cabin_3
+    exclusive: false
+    images:
+    - images/n_parking_cabin_0.webp
+    - images/n_parking_cabin_1.webp
+    - images/n_parking_cabin_2.webp
+    text:
+      en: At first glance, it is just a weathered red box beside a brick outbuilding.
+        Then the single door and window change the reading. This shipping-container-style
+        cabin is a neat picture of adaptive reuse, with an ordinary industrial shape
+        pressed into service as a practical site room. Trees soften one edge; stacked
+        materials keep the other firmly in worksite territory. It may not win “most
+        glamorous room” in the parking lot, but that is precisely the charm. Sometimes
+        useful architecture simply turns up in red, ready for the morning shift.
+      hi: पहली नज़र में यह ईंट की एक बाहरी इमारत के पास रखा, मौसम की मार झेल चुका
+        लाल डिब्बा भर लगता है। फिर उसका एक दरवाज़ा और एक खिड़की नज़रिया बदल देते
+        हैं। शिपिंग कंटेनर जैसी यह केबिन अनुकूल पुनःउपयोग की बढ़िया तस्वीर है—एक
+        साधारण औद्योगिक ढाँचा, जिसे व्यावहारिक साइट रूम के रूप में काम पर लगा दिया
+        गया है। एक ओर पेड़ इसे नरम बनाते हैं, दूसरी ओर रखा सामान माहौल को कामकाजी
+        बनाए रखता है। यह पार्किंग का “सबसे शानदार कमरा” शायद न हो, पर यही इसका
+        आकर्षण है। कभी-कभी उपयोगी वास्तुकला लाल रंग में सुबह की ड्यूटी पर आ जाती है।
+      fr: À première vue, ce n’est qu’une boîte rouge patinée par le temps, posée à
+        côté d’une dépendance en brique. Puis son unique porte et son unique fenêtre
+        changent la façon de la regarder. Cette cabine aux allures de conteneur maritime
+        offre une belle image du réemploi adaptatif, avec une forme industrielle ordinaire
+        transformée en local de chantier pratique. Les arbres adoucissent un côté,
+        tandis que les matériaux empilés maintiennent l’autre dans l’univers du travail.
+        Elle ne remportera peut-être pas le prix de la « pièce la plus glamour » du
+        parking, mais c’est précisément son charme. Parfois, l’architecture utile arrive
+        simplement en rouge, prête pour le service du matin.
+      es: A primera vista, no es más que una caja roja desgastada por el tiempo junto
+        a una construcción auxiliar de ladrillo. Después, su única puerta y su única
+        ventana cambian la forma de verla. Esta caseta con aspecto de contenedor marítimo
+        es una buena imagen de reutilización adaptativa, con una forma industrial corriente
+        convertida en un práctico espacio de trabajo. Los árboles suavizan un lado;
+        los materiales apilados mantienen el otro firmemente ligado al entorno laboral.
+        Quizá no gane el premio a la “sala más glamurosa” del estacionamiento, pero
+        ahí reside su encanto. A veces, la arquitectura útil simplemente aparece vestida
+        de rojo, lista para el turno de la mañana.
+  aiContext:
+    facts:
+    - This tree was here long before the tarmac, the SUVs, or the Wi-Fi.
+    - When the lot was paved, the tree was not cut down.
+    - The parking was built around the tree.
+    - Every car here parks in the shade of the tree.
+    - The tree is described as the oldest employee on the property.
+    - The tree is described as never having missed a day.
+    - The tree is described as never having asked for a raise.
+    - A Maruti WagonR with the registration DL 14 CF 1143 is parked here.
+    - The Maruti WagonR is described as a humble car.
+    - The Maruti WagonR is described as fitting four engineers and a weekend of energy
+      drinks.
+    - The Maruti WagonR is described as always starting.
+    - A weathered red, shipping-container-style cabin stands near a brick outbuilding.
+    - The cabin has one visible door and one visible window.
+    - Trees and stacks of materials surround the cabin.
+    fallbackNote:
+      en: Here you can discover a tree the parking lot was built around, a Maruti WagonR
+        that always starts, and a red container-style cabin clocking in as a practical room.
+      hi: यहाँ आप उस पेड़ को देख सकते हैं जिसके चारों ओर पार्किंग बनाई गई, एक मारुति
+        वैगनआर जो हमेशा स्टार्ट होती है, और व्यावहारिक कमरे की ड्यूटी करती लाल कंटेनर
+        जैसी केबिन।
+      fr: Ici, vous pouvez découvrir un arbre autour duquel le parking a été construit,
+        une Maruti WagonR qui démarre toujours et une cabine rouge de style conteneur
+        devenue une pièce pratique.
+      es: Aquí puedes descubrir un árbol alrededor del cual se construyó el estacionamiento,
+        un Maruti WagonR que siempre arranca y una caseta roja de estilo contenedor
+        convertida en un espacio práctico.
+- id: cp_farmhouse
+  name:
+    en: The Farm House Area
+    hi: फार्म हाउस एरिया
+    fr: La zone de la ferme
+    es: El área de la casa de la granja
+  mapPosition:
+    x: 0.4
+    y: 0.5
+  intro:
+    en: The prettiest corner of the property — and it's hiding a small architectural
+      joke.
+    hi: परिसर का सबसे ख़ूबसूरत कोना — और इसमें एक छोटा-सा वास्तुशिल्प मज़ाक छिपा है।
+    fr: Le plus joli coin de la propriété — et il cache une petite plaisanterie architecturale.
+    es: El rincón más bonito de la propiedad — y esconde una pequeña broma arquitectónica.
+  gps:
+    lat: 28.479144110947203
+    lng: 77.16345551893588
+    radius: 35
+  nuggets:
+  - id: n_farmhouse_building
+    title:
+      en: The House That Throws Shade (Literally)
+      hi: वह घर जो सचमुच छाया बनाता है
+      fr: La maison qui fait de l’ombre (au sens propre)
+      es: La casa que da sombra (literalmente)
+    targetImageId: zf_farmhouse
+    exclusive: false
+    images:
+    - images/n_farmhouse_building_0.webp
+    text:
+      en: Those bold concrete frames aren't only for looks. Open to the sky, they
+        slice the harsh afternoon sun into soft geometric shadows that crawl across
+        the floor all day — a sundial you can walk through. A farmhouse pretending
+        to be a modern art installation. Or maybe the other way around.
+      hi: ये मोटे कंक्रीट के फ्रेम सिर्फ़ दिखावे के लिए नहीं हैं। खुले आसमान तले,
+        ये दोपहर की तेज़ धूप को नरम ज्यामितीय परछाइयों में काट देते हैं जो दिन भर
+        फ़र्श पर सरकती रहती हैं — एक ऐसी धूपघड़ी जिसमें आप चल सकते हैं। एक फार्महाउस
+        जो आधुनिक कला बनने का नाटक कर रहा है। या शायद इसका उल्टा।
+      fr: Ces cadres en béton audacieux ne sont pas là uniquement pour leur apparence.
+        Ouverts vers le ciel, ils découpent le soleil dur de l’après-midi en ombres
+        géométriques douces qui glissent sur le sol toute la journée — un cadran solaire
+        que l’on peut traverser. Une ferme qui se fait passer pour une installation
+        d’art moderne. Ou peut-être l’inverse.
+      es: 'Esos audaces marcos de hormigón no son solo por estética. Abiertos al cielo,
+        dividen el duro sol de la tarde en suaves sombras geométricas que recorren
+        el suelo durante todo el día: un reloj de sol por el que se puede caminar.
+        Una casa de campo que se hace pasar por una instalación de arte moderno. O
+        quizá al revés.'
+  - id: n_farmhouse_garden
+    title:
+      en: The Roman Villa in Gurugram
+      hi: गुड़गाँव में रोमन विला
+      fr: La villa romaine à Gurugram
+      es: La villa romana en Gurugram
+    targetImageId: zf_garden
+    exclusive: true
+    images:
+    - images/n_farmhouse_garden_0.webp
+    - images/n_farmhouse_garden_1.webp
+    - images/n_farmhouse_garden_2.webp
+    - images/n_farmhouse_garden_3.webp
+    text:
+      en: 'White fluted columns, bougainvillea spilling over stone, a lawn glowing
+        green under the night lamps — for one second you''re not in Haryana, you''re
+        in a Mediterranean courtyard. This colonnade is the property''s worst-kept
+        secret: after dark, it''s the most photographed three metres on the entire
+        farm.'
+      hi: 'सफ़ेद खम्भे, पत्थरों पर बिखरा बोगनवेलिया, रात की रोशनी में दमकती हरी घास
+        — एक पल के लिए आप हरियाणा में नहीं, किसी भूमध्यसागरीय आँगन में होते हैं। यह
+        खम्भों वाला हिस्सा परिसर का सबसे खुला राज़ है: अँधेरे के बाद यह पूरे फार्म
+        की सबसे ज़्यादा फ़ोटो खिंचवाने वाली तीन मीटर ज़मीन है।'
+      fr: 'Des colonnes blanches cannelées, des bougainvilliers débordant sur la pierre,
+        une pelouse d’un vert éclatant sous les lampes de nuit — pendant une seconde,
+        vous n’êtes plus au Haryana, vous êtes dans une cour méditerranéenne. Cette
+        colonnade est le secret le moins bien gardé de la propriété : à la nuit tombée,
+        c’est les trois mètres les plus photographiés de toute la ferme.'
+      es: 'Columnas blancas acanaladas, buganvillas desbordándose sobre la piedra,
+        un césped que resplandece verde bajo las lámparas nocturnas: por un segundo
+        no estás en Haryana, estás en un patio mediterráneo. Esta columnata es el
+        secreto peor guardado de la propiedad: al anochecer, es los tres metros más
+        fotografiados de toda la finca.'
+  aiContext:
+    facts:
+    - This spot is described as the prettiest corner of the property.
+    - The spot is said to be hiding a small architectural joke.
+    - The bold concrete frames are not only for looks.
+    - The concrete frames are open to the sky.
+    - The frames slice the harsh afternoon sun into soft geometric shadows.
+    - The shadows crawl across the floor all day.
+    - The space is described as a sundial you can walk through.
+    - It is described as a farmhouse pretending to be a modern art installation.
+    - White fluted columns are part of the scene.
+    - Bougainvillea is spilling over stone.
+    - A lawn glows green under the night lamps.
+    - For one second, the place feels like a Mediterranean courtyard rather than Haryana.
+    - The colonnade is described as the property's worst-kept secret.
+    - After dark, it is the most photographed three metres on the entire farm.
+    fallbackNote:
+      en: You can discover a farmhouse pretending to be a modern art installation,
+        with geometric shadows, a Mediterranean courtyard feel, and a much-photographed
+        colonnade.
+      hi: आप एक फार्महाउस खोज सकते हैं जो आधुनिक कला प्रतिष्ठान होने का नाटक कर रहा
+        हो, जिसमें ज्यामितीय परछाइयाँ, भूमध्यसागरीय आँगन जैसा एहसास, और बार-बार फोटो
+        खींचा जाने वाला स्तंभों वाला गलियारा हो।
+      fr: Vous pouvez découvrir une ferme qui se fait passer pour une installation
+        d’art moderne, avec des ombres géométriques, une ambiance de cour méditerranéenne
+        et une colonnade très photographiée.
+      es: Puedes descubrir una casa de campo que se hace pasar por una instalación
+        de arte moderno, con sombras geométricas, una atmósfera de patio mediterráneo
+        y una columnata muy fotografiada.
+- id: cp_office
+  name:
+    en: The Office Building
+    hi: ऑफ़िस बिल्डिंग
+    fr: Le bâtiment administratif
+    es: El edificio de oficinas
+  mapPosition:
+    x: 0.62
+    y: 0.2
+  intro:
+    en: Where the farm stops being scenery and becomes a workplace — the nerve centre.
+    hi: जहाँ फार्म नज़ारा नहीं, कार्यस्थल बन जाता है — असली नर्व सेंटर।
+    fr: Là où la ferme cesse d’être un décor et devient un lieu de travail — le centre
+      névralgique.
+    es: 'Donde la granja deja de ser decorado y se convierte en lugar de trabajo:
+      el centro neurálgico.'
+  gps:
+    lat: 28.479144110947203
+    lng: 77.16345551893588
+    radius: 35
+  nuggets:
+  - id: n_office_frontdesk
+    title:
+      en: The Screen Everything Rides On
+      hi: वह स्क्रीन जिस पर सब कुछ टिका है
+      fr: L’écran sur lequel tout repose
+      es: La pantalla sobre la que todo viaja
+    targetImageId: zf_frontdesk
+    exclusive: false
+    images:
+    - images/n_office_frontdesk_0.webp
+    text:
+      en: One projector screen, one long white desk, and a room where every big idea
+        gets its first honest audience. Careers have turned on what appeared here
+        for ninety seconds. If these walls could autoplay, they'd show a thousand
+        demos — most of them opening with the words, "so… it was working a minute
+        ago."
+      hi: 'एक प्रोजेक्टर स्क्रीन, एक लंबी सफ़ेद मेज़, और एक कमरा जहाँ हर बड़े आइडिया
+        को उसकी पहली ईमानदार सुनवाई मिलती है। यहाँ नब्बे सेकंड में करियर बदल चुके
+        हैं। अगर ये दीवारें ऑटोप्ले कर पातीं, तो हज़ार डेमो दिखातीं — ज़्यादातर इन
+        शब्दों से शुरू: "अभी तो एक मिनट पहले चल रहा था।"'
+      fr: 'Un écran de projection, un long bureau blanc, et une salle où chaque grande
+        idée trouve son premier public honnête. Des carrières ont basculé sur ce qui
+        a été présenté ici pendant quatre-vingt-dix secondes. Si ces murs pouvaient
+        lancer une lecture automatique, ils montreraient mille démonstrations — la
+        plupart commençant par les mots : « alors… ça marchait il y a une minute.
+        »'
+      es: 'Una pantalla de proyector, un largo escritorio blanco y una sala donde
+        toda gran idea tiene su primer público honesto. Carreras enteras han dado
+        un giro por lo que apareció aquí durante noventa segundos. Si estas paredes
+        pudieran reproducirse solas, mostrarían mil demostraciones, la mayoría empezando
+        con las palabras: «así que… estaba funcionando hace un minuto».'
+  - id: n_office_rockbench
+    title:
+      en: The Command Desk
+      hi: कमांड डेस्क
+      fr: Le bureau de commandement
+      es: El escritorio de mando
+    targetImageId: zf_rockbench
+    targetImageIds:
+    - zf_rockbench_0
+    - zf_rockbench_1
+    - zf_rockbench_2
+    - zf_rockbench_3
+    - zf_rockbench_4
+    exclusive: true
+    images:
+    - images/n_office_rockbench_0.webp
+    - images/n_office_rockbench_1.webp
+    text:
+      en: This is the one. Behind the Red Bull, the Coca-Cola, and a fortress of sticker-covered
+        laptops, this desk is where Marauders — the very app in your hands — was built,
+        in one sleepless sprint. You're not just looking at a table. You're looking
+        at the scene of the crime.
+      hi: यही है वो जगह। रेड बुल, कोका-कोला और स्टिकरों से भरे लैपटॉप के क़िले के
+        पीछे, यही वह मेज़ है जहाँ Marauders — वही ऐप जो आपके हाथ में है — एक रात की
+        नींद हराम करके बनाया गया। आप सिर्फ़ एक मेज़ नहीं देख रहे। आप अपराध-स्थल देख
+        रहे हैं।
+      fr: C’est celle-ci. Derrière le Red Bull, le Coca-Cola et une forteresse d’ordinateurs
+        portables couverts d’autocollants, c’est à ce bureau que Marauders — l’application
+        que vous avez entre les mains — a été créée, en un seul sprint sans sommeil.
+        Vous ne regardez pas seulement une table. Vous regardez la scène du crime.
+      es: Esta es la que da lugar. Detrás del Red Bull, la Coca-Cola y una fortaleza
+        de portátiles cubiertos de pegatinas, este escritorio es donde se construyó
+        Marauders —la misma aplicación que tienes en tus manos—, en un solo sprint
+        sin dormir. No estás mirando solo una mesa. Estás mirando la escena del crimen.
+  aiContext:
+    facts:
+    - The spot is described as the nerve centre where the farm stops being scenery
+      and becomes a workplace.
+    - The room contains one projector screen.
+    - The room contains one long white desk.
+    - The room is where every big idea gets its first honest audience.
+    - Careers have turned on what appeared here for ninety seconds.
+    - The walls are described as if they could autoplay a thousand demos.
+    - Most of the demos are described as opening with the words, "so… it was working
+      a minute ago."
+    - The desk is behind the Red Bull.
+    - The desk is behind the Coca-Cola.
+    - The desk is behind a fortress of sticker-covered laptops.
+    - The desk is where Marauders was built.
+    - Marauders is described as the app in your hands.
+    - Marauders was built in one sleepless sprint.
+    - The text calls the desk the scene of the crime.
+    fallbackNote:
+      en: Here you can discover the nerve centre where big ideas get their first honest
+        audience and Marauders was built in one sleepless sprint.
+      hi: यहाँ आप उस नर्व सेंटर की खोज कर सकते हैं, जहाँ बड़े विचारों को अपना पहला
+        ईमानदार श्रोता मिलता है और जहाँ Marauders को एक ही बिना नींद वाली दौड़ में
+        बनाया गया था।
+      fr: Ici, vous pouvez découvrir le centre névralgique où les grandes idées trouvent
+        leur premier public sincère, et où Marauders a été construit en une seule
+        nuit blanche.
+      es: Aquí puedes descubrir el centro neurálgico donde las grandes ideas reciben
+        por primera vez una audiencia sincera, y Marauders se construyó en un maratón
+        sin dormir.
+venue_checkpoints: []

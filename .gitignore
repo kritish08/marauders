@@ -1,0 +1,7 @@
+# Raw source photos for the Zomato Farmhouse venue — 495MB, embeds exact
+# GPS EXIF of the property. One-time input for backend/seed_zomato_media.py
+# and seed_parking_refresh.py; the curated, GPS-free derivatives already
+# ship in backend/targets/ and backend/nugget_images/.
+Zomato Farm/
+
+.DS_Store

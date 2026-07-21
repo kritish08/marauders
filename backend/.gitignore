@@ -1,0 +1,11 @@
+.venv/
+.env
+.claude/settings.local.json
+__pycache__/
+*.pyc
+.DS_Store
+test_speech.mp3
+test_openai.mp3
+dist/
+content/tour.db
+_retired/

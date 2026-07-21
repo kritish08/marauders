@@ -1,0 +1,402 @@
+monument:
+  id: taj_mahal
+  name:
+    en: Taj Mahal
+    hi: ताज महल
+    fr: Taj Mahal
+    es: Taj Mahal
+  languages:
+  - en
+  - hi
+  - fr
+  - es
+  overview:
+    en: 'The Taj Mahal, completed in 1653 by Mughal emperor Shah Jahan in memory of
+      Mumtaz Mahal, is a white-marble mausoleum on the bank of the Yamuna in Agra
+      — a UNESCO World Heritage Site visited by millions every year.
+
+      '
+    hi: 'ताज महल, जिसे मुग़ल बादशाह शाहजहाँ ने अपनी बेगम मुमताज़ महल की याद में 1653
+      में बनवाया था, आगरा में यमुना किनारे स्थित सफ़ेद संगमरमर का मक़बरा है।
+
+      '
+    fr: Le Taj Mahal, achevé en 1653 par l’empereur moghol Shah Jahan en mémoire de
+      Mumtaz Mahal, est un mausolée de marbre blanc sur la rive de la Yamuna à Agra
+      — un site du patrimoine mondial de l’UNESCO visité par des millions de personnes
+      chaque année.
+    es: El Taj Mahal, completado en 1653 por el emperador mogol Shah Jahan en memoria
+      de Mumtaz Mahal, es un mausoleo de mármol blanco a orillas del Yamuna en Agra,
+      un sitio del Patrimonio Mundial de la UNESCO visitado por millones cada año.
+  ambientTrack: music/ambient_default.mp3
+checkpoints:
+- id: cp_great_gate
+  name:
+    en: The Great Gate (Darwaza-i-Rauza)
+    hi: बुलंद दरवाज़ा (दरवाज़ा-ए-रौज़ा)
+    fr: La Grande Porte (Darwaza-i-Rauza)
+    es: La Gran Puerta (Darwaza-i-Rauza)
+  mapPosition:
+    x: 0.5
+    y: 0.88
+  intro:
+    en: Your first framed view of the Taj — and the gate is playing a trick on your
+      eyes.
+    hi: ताज की पहली झलक — और यह दरवाज़ा आपकी आँखों से एक खेल खेल रहा है।
+    fr: Votre première vue encadrée du Taj — et la porte joue un tour à vos yeux.
+    es: Tu primera vista enmarcada del Taj, y la puerta le está jugando una trampa
+      a tus ojos.
+  gps:
+    lat: 27.1717
+    lng: 78.0423
+    radius: 60
+  nuggets:
+  - id: n_gate_illusion
+    title:
+      en: The Shrinking Taj Illusion
+      hi: सिकुड़ते ताज का भ्रम
+      fr: L’illusion du Taj qui rétrécit
+      es: La ilusión del Taj que se encoge
+    targetImageId: taj_great_gate
+    exclusive: true
+    images: []
+    text:
+      en: 'Stand at the gate''s threshold and walk backward — the Taj appears to grow.
+        Walk toward it and it seems to shrink. The Mughal architects framed the arch
+        to exploit perspective, so your first memory of the monument is larger than
+        life. Most guides walk you straight through; almost no one shows you the reverse
+        walk.
+
+        '
+      hi: 'दरवाज़े की चौखट पर खड़े होकर पीछे चलिए — ताज बड़ा होता दिखेगा। आगे बढ़िए
+        तो छोटा। मुग़ल वास्तुकारों ने मेहराब को इसी नज़रिये से बनाया था। ज़्यादातर
+        गाइड आपको सीधे अंदर ले जाते हैं — उल्टी चाल शायद ही कोई दिखाता है।
+
+        '
+      fr: Tenez-vous sur le seuil de la porte et marchez à reculons — le Taj semble
+        grandir. Avancez vers lui et il paraît rétrécir. Les architectes moghols ont
+        encadré l’arche pour exploiter la perspective, si bien que votre premier souvenir
+        du monument est plus grand que nature. La plupart des guides vous font traverser
+        droit devant ; presque personne ne vous montre la marche en sens inverse.
+      es: 'Párate en el umbral de la puerta y camina hacia atrás: el Taj parece crecer.
+        Camina hacia él y parece encogerse. Los arquitectos mogoles enmarcaron el
+        arco para aprovechar la perspectiva, de modo que tu primer recuerdo del monumento
+        es más grande que la vida. La mayoría de las guías te llevan directamente
+        a través de él; casi nadie te muestra la caminata en sentido inverso.'
+  - id: n_gate_calligraphy
+    title:
+      en: Calligraphy That Never Shrinks
+      hi: जो लिखावट कभी छोटी नहीं दिखती
+      fr: Une calligraphie qui ne rétrécit jamais
+      es: Caligrafía que nunca se encoge
+    targetImageId: taj_gate_calligraphy
+    exclusive: false
+    images: []
+    text:
+      en: 'The Quranic inscriptions on the gate look perfectly uniform from bottom
+        to top — but they''re not. The letters grow larger as they rise, precisely
+        compensating for distance, so from where you stand every line reads the same
+        size. Sixteenth-century optical correction, done in inlaid jasper.
+
+        '
+      hi: 'दरवाज़े पर क़ुरआन की आयतें नीचे से ऊपर तक एक जैसी दिखती हैं — पर हैं नहीं।
+        ऊपर के अक्षर बड़े हैं, ताकि दूरी के बावजूद हर पंक्ति बराबर दिखे। सोलहवीं सदी
+        का ऑप्टिकल करेक्शन, जैस्पर पत्थर की जड़ाई में।
+
+        '
+      fr: Les inscriptions coraniques sur le portail semblent parfaitement uniformes
+        de bas en haut — mais elles ne le sont pas. Les lettres grandissent à mesure
+        qu’elles montent, compensant avec précision la distance, de sorte que, d’où
+        vous vous tenez, chaque ligne paraît de la même taille. Une correction optique
+        du XVIe siècle, réalisée en jaspe incrusté.
+      es: Las inscripciones coránicas de la puerta parecen perfectamente uniformes
+        de abajo arriba, pero no lo son. Las letras se hacen más grandes a medida
+        que ascienden, compensando con precisión la distancia, de modo que, desde
+        donde usted está, todas las líneas se leen del mismo tamaño. Corrección óptica
+        del siglo XVI, realizada en jaspe incrustado.
+  aiContext:
+    facts:
+    - This spot offers your first framed view of the Taj.
+    - The gate can make the Taj appear to grow when you walk backward from its threshold.
+    - The Taj can seem to shrink when you walk toward the gate.
+    - The Mughal architects framed the arch to exploit perspective.
+    - The first memory of the monument is meant to feel larger than life.
+    - Most guides walk visitors straight through the gate.
+    - Almost no one shows visitors the reverse walk.
+    - The Quranic inscriptions on the gate look perfectly uniform from bottom to top.
+    - The letters are not actually uniform in size.
+    - The letters grow larger as they rise.
+    - The letter size precisely compensates for distance.
+    - From where you stand, every line reads the same size.
+    - The optical correction dates to the sixteenth century.
+    - The optical correction is done in inlaid jasper.
+    fallbackNote:
+      en: At this gate, you can see the Taj seem to grow or shrink with perspective
+        and the Quranic inscriptions appear uniform from where you stand.
+      hi: इस द्वार पर, आप देख सकते हैं कि ताज महल परिप्रेक्ष्य के साथ बड़ा या छोटा
+        होता हुआ प्रतीत होता है, और कुरान की शिलालेखें जहाँ आप खड़े हैं वहाँ से एकसमान
+        दिखाई देती हैं।
+      fr: À cette porte, vous pouvez voir le Taj sembler grandir ou rétrécir selon
+        la perspective, et les inscriptions coraniques paraissent uniformes d’où vous
+        vous tenez.
+      es: En esta puerta, se puede ver que el Taj parece crecer o encogerse con la
+        perspectiva, y las inscripciones coránicas parecen uniformes desde donde te
+        encuentras.
+- id: cp_main_platform
+  name:
+    en: The Marble Platform
+    hi: संगमरमर का चबूतरा
+    fr: La plateforme de marbre
+    es: La plataforma de mármol
+  mapPosition:
+    x: 0.5
+    y: 0.45
+  intro:
+    en: You're standing on the plinth now. Get close to the marble — this is the famous
+      one.
+    hi: अब आप चबूतरे पर हैं। संगमरमर के पास जाइए — यही वह मशहूर राज़ है।
+    fr: Vous vous tenez maintenant sur le socle. Approchez-vous du marbre — c’est
+      celui-ci, le célèbre.
+    es: 'Ahora estás de pie sobre el pedestal. Acércate al mármol: esta es la famosa.'
+  gps:
+    lat: 27.175
+    lng: 78.0421
+    radius: 60
+  nuggets:
+  - id: n_marble_torch
+    title:
+      en: The Glowing Marble Secret
+      hi: चमकते संगमरमर का राज़
+      fr: Le secret du marbre lumineux
+      es: El secreto del mármol resplandeciente
+    targetImageId: taj_marble_closeup
+    exclusive: true
+    images:
+    - images/n_marble_torch_0.webp
+    - images/n_marble_torch_1.webp
+    text:
+      en: 'Shine a torch flat against the white marble and watch the stone glow golden
+        from within. Makrana marble is translucent — light travels several millimetres
+        inside before scattering back. It''s why the Taj changes colour through the
+        day: pink at dawn, white at noon, golden by moonlight. Guides mention the
+        colours; few let you make the marble glow yourself.
+
+        '
+      hi: 'सफ़ेद संगमरमर पर टॉर्च सटाकर जलाइए — पत्थर अंदर से सुनहरा चमक उठेगा। मकराना
+        संगमरमर पारभासी है — रोशनी कई मिलीमीटर भीतर जाकर लौटती है। इसीलिए ताज दिन
+        भर रंग बदलता है: भोर में गुलाबी, दोपहर में सफ़ेद, चाँदनी में सुनहरा। यह चमक
+        ख़ुद करके शायद ही कोई दिखाता है।
+
+        '
+      fr: 'Braquez une lampe de poche à plat contre le marbre blanc et regardez la
+        pierre briller d’un éclat doré de l’intérieur. Le marbre de Makrana est translucide
+        — la lumière y pénètre sur plusieurs millimètres avant de se diffuser en retour.
+        C’est pourquoi le Taj change de couleur au fil de la journée : rose à l’aube,
+        blanc à midi, doré au clair de lune. Les guides évoquent ces couleurs ; peu
+        vous laissent faire vous-même luire le marbre.'
+      es: 'Apunta una linterna en paralelo contra el mármol blanco y observa cómo
+        la piedra resplandece dorada desde dentro. El mármol de Makrana es translúcido:
+        la luz recorre varios milímetros en su interior antes de dispersarse de vuelta.
+        Por eso el Taj cambia de color a lo largo del día: rosa al amanecer, blanco
+        al mediodía, dorado a la luz de la luna. Los guías mencionan los colores;
+        pocos te dejan hacer que el mármol brille tú mismo.'
+  - id: n_minaret_tilt
+    title:
+      en: The Deliberately Crooked Minarets
+      hi: जानबूझकर झुकी मीनारें
+      fr: Les minarets délibérément inclinés
+      es: Los minaretes deliberadamente torcidos
+    targetImageId: taj_minaret
+    exclusive: false
+    images: []
+    text:
+      en: 'All four minarets lean slightly outward — on purpose. In an earthquake
+        they would fall away from the main tomb, not onto it. Seventeenth-century
+        seismic engineering, hidden in plain sight.
+
+        '
+      hi: 'चारों मीनारें हल्की-सी बाहर की ओर झुकी हैं — जानबूझकर। भूकंप आए तो वे मुख्य
+        मक़बरे से दूर गिरें, उस पर नहीं। सत्रहवीं सदी की भूकंप इंजीनियरिंग, सबकी आँखों
+        के सामने छिपी हुई।
+
+        '
+      fr: Les quatre minarets penchent légèrement vers l’extérieur — volontairement.
+        En cas de tremblement de terre, ils tomberaient à l’écart du tombeau principal,
+        et non dessus. De l’ingénierie parasismique du XVIIe siècle, à la vue de tous.
+      es: Los cuatro minaretes se inclinan ligeramente hacia afuera, a propósito.
+        En un terremoto caerían alejándose de la tumba principal, no sobre ella. Ingeniería
+        sísmica del siglo XVII, a plena vista.
+  aiContext:
+    facts:
+    - The marble is Makrana marble.
+    - Makrana marble is translucent.
+    - Light travels several millimetres inside Makrana marble before scattering back.
+    - The Taj changes colour through the day.
+    - The Taj is pink at dawn.
+    - The Taj is white at noon.
+    - The Taj is golden by moonlight.
+    - All four minarets lean slightly outward.
+    - The minarets lean outward on purpose.
+    - In an earthquake, the minarets would fall away from the main tomb, not onto
+      it.
+    - This is described as seventeenth-century seismic engineering.
+    fallbackNote:
+      en: Here you can make Makrana marble glow golden from within and discover how
+        the minarets lean outward on purpose to protect the main tomb in an earthquake.
+      hi: यहाँ आप मकराना संगमरमर को भीतर से सुनहरी आभा में चमकता हुआ देख सकते हैं
+        और जान सकते हैं कि मीनारें भूकंप में मुख्य मकबरे की सुरक्षा के लिए जानबूझकर
+        बाहर की ओर क्यों झुकी हुई हैं।
+      fr: Ici, vous pouvez faire briller le marbre de Makrana d’une lueur dorée de
+        l’intérieur et découvrir comment les minarets penchent vers l’extérieur volontairement
+        afin de protéger le tombeau principal en cas de tremblement de terre.
+      es: Aquí puede hacer que el mármol de Makrana brille con un resplandor dorado
+        desde el interior y descubrir cómo los minaretes se inclinan hacia afuera
+        a propósito para proteger la tumba principal en caso de terremoto.
+- id: cp_inlay_detail
+  name:
+    en: The Pietra Dura Walls
+    hi: पच्चीकारी की दीवारें
+    fr: Les murs de pietra dura
+    es: Las paredes de pietra dura
+  mapPosition:
+    x: 0.36
+    y: 0.3
+  intro:
+    en: Those flowers aren't painted. Look closer.
+    hi: ये फूल पेंट नहीं किए गए। ज़रा पास से देखिए।
+    fr: Ces fleurs ne sont pas peintes. Regardez de plus près.
+    es: Esas flores no están pintadas. Mira más de cerca.
+  gps:
+    lat: 27.1751
+    lng: 78.0417
+    radius: 60
+  nuggets:
+  - id: n_pietra_dura
+    title:
+      en: Flowers Made of 72 Stones
+      hi: बहत्तर पत्थरों से बने फूल
+      fr: Fleurs faites de 72 pierres
+      es: Flores hechas de 72 piedras
+    targetImageId: taj_pietra_dura
+    exclusive: false
+    images: []
+    text:
+      en: 'Each flower is parchin kari — dozens of slices of carnelian, jade, lapis
+        and turquoise, cut and inlaid into carved marble so precisely you can''t feel
+        the joints. On the screen around the royal cenotaph, a single flower holds
+        72 separate stone pieces — and the stones travelled the world to get here:
+        carnelian from Arabia, turquoise from Tibet, malachite from Russia. Fifty
+        such flowers ring each tomb.'
+      hi: 'हर फूल पच्चीकारी है — कार्नेलियन, जेड, लाजवर्द और फ़िरोज़ा के दर्जनों टुकड़े,
+        संगमरमर में इतनी बारीकी से जड़े कि जोड़ महसूस नहीं होते। शाही कब्र के चारों
+        ओर की जाली पर एक अकेले फूल में 72 अलग पत्थर के टुकड़े हैं — और ये पत्थर दुनिया
+        भर से आए: अरब से कार्नेलियन, तिब्बत से फ़िरोज़ा, रूस से मैलाकाइट। हर कब्र
+        के चारों ओर पचास ऐसे फूल हैं।'
+      fr: 'Chaque fleur est en parchin kari — des dizaines de fines lamelles de cornaline,
+        de jade, de lapis-lazuli et de turquoise, taillées et incrustées dans du marbre
+        sculpté avec une telle précision qu’on ne sent pas les joints. Sur l’écran
+        autour du cénotaphe royal, une seule fleur réunit 72 pièces de pierre distinctes
+        — et les pierres ont parcouru le monde pour arriver ici : la cornaline d’Arabie,
+        la turquoise du Tibet, la malachite de Russie. Cinquante fleurs de ce type
+        entourent chaque tombe.'
+      es: 'Cada flor es parchin kari: decenas de láminas de cornalina, jade, lapislázuli
+        y turquesa, cortadas e incrustadas en mármol tallado con tal precisión que
+        no se perciben las uniones. En la pantalla que rodea el cenotafio real, una
+        sola flor contiene 72 piezas de piedra separadas, y las piedras recorrieron
+        el mundo para llegar hasta aquí: cornalina de Arabia, turquesa del Tíbet,
+        malaquita de Rusia. Cincuenta flores de este tipo rodean cada tumba.'
+  aiContext:
+    facts:
+    - The flowers are not painted.
+    - Each flower is parchin kari.
+    - Each flower is made from dozens of slices of carnelian, jade, lapis, and turquoise.
+    - The stones are cut and inlaid into carved marble.
+    - The joints are so precise that you can't feel them.
+    - On the screen around the royal cenotaph, a single flower holds 72 separate stone
+      pieces.
+    - Carnelian came from Arabia.
+    - Turquoise came from Tibet.
+    - Malachite came from Russia.
+    - Fifty such flowers ring each tomb.
+    fallbackNote:
+      en: You can discover parchin kari flowers of carved marble inlaid with stones
+        from around the world, encircling the royal cenotaph.
+      hi: आप नक्काशीदार संगमरमर के पारचिनकारी फूलों को, जिनमें दुनिया भर के पत्थर
+        जड़े हैं, शाही समाधि के चारों ओर घेरते हुए देख सकते हैं।
+      fr: Vous pouvez découvrir des fleurs de parchin kari en marbre sculpté incrusté
+        de pierres venues du monde entier, entourant le cénotaphe royal.
+      es: Puedes descubrir flores de parchin kari talladas en mármol e incrustadas
+        con piedras de todo el mundo, que rodean el cenotafio real.
+- id: cp_river_view
+  name:
+    en: The Yamuna Terrace
+    hi: यमुना की छत
+    fr: La terrasse de la Yamuna
+    es: La terraza Yamuna
+  mapPosition:
+    x: 0.5
+    y: 0.12
+  intro:
+    en: The quietest corner of the complex — and its biggest unsolved story.
+    hi: परिसर का सबसे शांत कोना — और इसकी सबसे बड़ी अनसुलझी कहानी।
+    fr: Le coin le plus tranquille du complexe — et sa plus grande histoire non résolue.
+    es: El rincón más silencioso del complejo, y su mayor historia sin resolver.
+  gps:
+    lat: 27.1755
+    lng: 78.0421
+    radius: 60
+  nuggets:
+  - id: n_black_taj
+    title:
+      en: The Black Taj Myth
+      hi: काले ताज की किंवदंती
+      fr: Le mythe du Taj Noir
+      es: El mito del Taj Negro
+    targetImageId: taj_river_terrace
+    exclusive: true
+    images: []
+    text:
+      en: 'Across the river lie the Mehtab Bagh gardens — where legend says Shah Jahan
+        planned a black-marble twin of the Taj for himself. Archaeologists found no
+        black marble there, but they did find the garden aligns perfectly with the
+        Taj, and a moonlit pool that reflects the white Taj — as a dark one. The "Black
+        Taj" may have been a reflection all along.
+
+        '
+      hi: 'नदी के उस पार मेहताब बाग़ है — कहा जाता है शाहजहाँ वहाँ अपने लिए काले संगमरमर
+        का ताज बनवाना चाहते थे। खुदाई में काला संगमरमर नहीं मिला, पर एक हौज़ मिला
+        जिसमें चाँदनी रात में सफ़ेद ताज का अक्स — काला दिखता है। शायद ''काला ताज''
+        हमेशा से एक परछाईं ही था।
+
+        '
+      fr: De l’autre côté de la rivière s’étendent les jardins de Mehtab Bagh — où
+        la légende dit que Shah Jahan aurait prévu pour lui-même un jumeau du Taj
+        en marbre noir. Les archéologues n’y ont trouvé aucun marbre noir, mais ils
+        ont constaté que le jardin s’aligne parfaitement avec le Taj, ainsi qu’un
+        bassin éclairé par la lune qui reflète le Taj blanc — comme un Taj sombre.
+        Le « Taj noir » n’a peut-être été qu’un reflet depuis le début.
+      es: Al otro lado del río se extienden los jardines Mehtab Bagh, donde la leyenda
+        dice que Shah Jahan planeó para sí mismo un gemelo del Taj en mármol negro.
+        Los arqueólogos no encontraron allí mármol negro, pero sí descubrieron que
+        el jardín se alinea perfectamente con el Taj, y una piscina iluminada por
+        la luna que refleja el Taj blanco como si fuera uno oscuro. El «Taj Negro»
+        quizá siempre haya sido solo un reflejo.
+  aiContext:
+    facts:
+    - The quietest corner of the complex is also its biggest unsolved story.
+    - Across the river lie the Mehtab Bagh gardens.
+    - Legend says Shah Jahan planned a black-marble twin of the Taj for himself.
+    - Archaeologists found no black marble at Mehtab Bagh.
+    - Archaeologists found that the garden aligns perfectly with the Taj.
+    - Archaeologists found a moonlit pool that reflects the white Taj as a dark one.
+    - The "Black Taj" may have been a reflection all along.
+    fallbackNote:
+      en: The quietest corner of the complex offers the unsolved story of Mehtab Bagh,
+        where a moonlit pool reflects the white Taj as a dark one.
+      hi: कॉम्प्लेक्स का सबसे शांत कोना मेहताब बाग की अनसुलझी कहानी पेश करता है, जहाँ
+        चाँदनी में नहाया एक तालाब सफेद ताज को एक अँधेरी परछाईं की तरह प्रतिबिंबित
+        करता है।
+      fr: Le coin le plus tranquille du complexe offre l’histoire non résolue de Mehtab
+        Bagh, où un bassin éclairé par la lune reflète le Taj blanc en un miroir sombre.
+      es: La esquina más silenciosa del complejo ofrece la historia sin resolver de
+        Mehtab Bagh, donde una alberca bañada por la luz de la luna refleja el Taj
+        blanco como uno oscuro.

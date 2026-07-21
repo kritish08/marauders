@@ -1,0 +1,3 @@
+MARAUDERS_APP_KEY =
+
+#include? "../../Secrets.xcconfig"
