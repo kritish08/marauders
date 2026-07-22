@@ -1,5 +1,7 @@
 # Marauders — AI District Tour Guide
 
+*"I solemnly swear that I am up to no good."* 🪄
+
 **An offline-first AR + voice tour guide.** Point your phone at a monument, ask it
 anything, hear a grounded answer in your language, in seconds — no network
 required for the core tour.
@@ -87,8 +89,6 @@ flowchart LR
     API -- serves --> Zip
     Admin -- "CRUD checkpoints/nuggets" --> DB --> YAML --> Builder --> Zip
 ```
-
-**[🎨 Open the interactive, hand-drawn version on Excalidraw →](https://excalidraw.com/#json=PJfoqK71h4pkoHUWzXEO4,h0K9TudENbRd6cfaX10AKg)**
 
 The core design decision: **the app never depends on the network for the tour
 itself.** Everything a visitor needs — narration, images, AR targets — is
@@ -314,3 +314,7 @@ don't reuse anything that ever appeared in this repo's history.
 
 [MIT](LICENSE) — see the `LICENSE` file in each of `backend/` and `frontend/`
 for their independent repos.
+
+---
+
+*"Mischief managed."* 🪄
