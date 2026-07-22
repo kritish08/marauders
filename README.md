@@ -298,9 +298,9 @@ Sample client code lives in [`backend/examples/`](backend/examples/):
 
 | Contributor | Contribution |
 |---|---|
-| **Kritish** ([@kritish08](https://github.com/kritish08)) | Entire backend (FastAPI service, content pipeline, admin panel), all iOS 27 features added to the frontend — including Apple Foundation Models integration for offline on-device AI — the SQLite database, ML data training, and the Azure AI Foundry integration (GPT, Whisper, TTS) |
-| **Kartik Masiwal** ([@kartikmasiwal](https://github.com/kartikmasiwal)) | iOS frontend development |
-| **Gitansh Kapoor** ([@GitanshKapoor](https://github.com/GitanshKapoor)) | AR, frontend, UX, and project flow |
+| **Kritish** ([@kritish08](https://github.com/kritish08)) | Led the end-to-end backend engineering, including the FastAPI service, content processing pipeline, admin panel, SQLite database architecture, ML training infrastructure, and Azure AI Foundry integration (GPT, Whisper, and Text-to-Speech). Implemented Apple Foundation Models for offline on-device AI, developed and integrated all iOS 27 features, led the application's UX design and user flow, and contributed extensively to the iOS frontend and overall system architecture. |
+| **Kartik Masiwal** ([@kartikmasiwal](https://github.com/kartikmasiwal)) | Led the iOS application development, designing and implementing the user interface while developing the AI chatbot experience on the frontend. Integrated Apple Foundation Models to enable on-device intelligence and contributed to frontend architecture, feature development, and performance optimization across the iOS application. |
+| **Gitansh Kapoor** ([@GitanshKapoor](https://github.com/GitanshKapoor)) | Led the augmented reality (AR) development, contributed to frontend implementation, engineered the integration layer between the frontend and backend, developed and optimized ELT pipelines for data preparation and ML model training, optimized the application for efficient on-device memory and compute utilization, collaborated on cross-platform feature integration, and contributed to the application's overall user experience and project workflow. |
 
 ## Security
 
